@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Telegram Messenger</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0088cc;
+      --primary-dark: #0077b3;
+      --background: #f1f2f5;
+      --card-bg: #ffffff;
+      --text: #000000;
+      --text-light: #707579;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      --gradient-start: #1e88e5;
+      --gradient-end: #0d47a1;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    
+    .auth-container {
+      width: 100%;
+      max-width: 400px;
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .auth-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    
+    .app-header {
+      background: var(--primary);
+      padding: 30px 20px;
+      color: white;
+      text-align: center;
+    }
+    
+    .logo {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+    
+    .app-name {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    
+    .app-content {
+      padding: 30px;
+    }
+    
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    
+    .auth-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+    
+    .auth-subtitle {
+      color: var(--text-light);
+      margin-bottom: 25px;
+    }
+    
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    
+    .input-group i {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      font-size: 18px;
+    }
+    
+    .input-group input {
+      width: 100%;
+      padding: 16px 20px 16px 50px;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+    
+    .input-group input:focus {
+      border-color: var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 136, 204, 0.2);
+    }
+    
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px;
+      border-radius: 12px;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+      text-decoration: none;
+      width: 100%;
+    }
+    
+    .btn.primary {
+      background: var(--primary);
+      color: white;
+      margin-top: 10px;
+    }
+    
+    .btn.primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 136, 204, 0.3);
+    }
+    
+    .auth-footer {
+      margin-top: 25px;
+      text-align: center;
+      font-size: 15px;
+      color: var(--text-light);
+    }
+    
+    .auth-footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="app-header">
+        <div class="logo">
+          <i class="fab fa-telegram"></i>
+        </div>
+        <h1 class="app-name">Telegram</h1>
+      </div>
+      
+      <div class="app-content">
+        <a href="index.html" class="back-btn">
+          <i class="fas fa-arrow-left"></i> Back to home
+        </a>
+        
+        <h2 class="auth-title">Create Account</h2>
+        <p class="auth-subtitle">Join Telegram today</p>
+        
+        <form id="registerForm">
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" id="regUsername" placeholder="Choose a username" required>
+          </div>
+          
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="regPassword" placeholder="Create a password" required>
+          </div>
+          
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+          </div>
+          
+          <button type="submit" class="btn primary">
+            <i class="fas fa-user-plus"></i> Create Account
+          </button>
+        </form>
+        
+        <div class="auth-footer">
+          <p>Already have an account? <a href="login.html">Log in</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="auth.js"></script>
+</body>
+</html>

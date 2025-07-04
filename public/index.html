@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telegram Messenger</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0088cc;
+      --primary-dark: #0077b3;
+      --background: #f1f2f5;
+      --card-bg: #ffffff;
+      --text: #000000;
+      --text-light: #707579;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      --gradient-start: #1e88e5;
+      --gradient-end: #0d47a1;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    
+    .auth-container {
+      width: 100%;
+      max-width: 480px;
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .auth-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      text-align: center;
+    }
+    
+    .app-header {
+      background: var(--primary);
+      padding: 40px 20px 30px;
+      color: white;
+    }
+    
+    .logo {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+    
+    .app-name {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    
+    .tagline {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+    
+    .app-content {
+      padding: 40px 30px;
+    }
+    
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+    
+    .feature {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 140px;
+    }
+    
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: rgba(0, 136, 204, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      font-size: 24px;
+      color: var(--primary);
+    }
+    
+    .feature-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    
+    .feature-desc {
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.4;
+    }
+    
+    .auth-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px;
+      border-radius: 50px;
+      font-size: 17px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      border: none;
+      text-decoration: none;
+    }
+    
+    .btn.primary {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .btn.primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 136, 204, 0.3);
+    }
+    
+    .btn.secondary {
+      background: white;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+    
+    .btn.secondary:hover {
+      background: rgba(0, 136, 204, 0.05);
+    }
+    
+    .app-footer {
+      margin-top: 30px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+    }
+    
+    @media (max-width: 480px) {
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .app-content {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="app-header">
+        <div class="logo">
+          <i class="fab fa-telegram"></i>
+        </div>
+        <h1 class="app-name">Telegram Messenger</h1>
+        <p class="tagline">Fast. Secure. Powerful.</p>
+      </div>
+      
+      <div class="app-content">
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3 class="feature-title">Fast</h3>
+            <p class="feature-desc">Lightning fast messaging experience</p>
+          </div>
+          
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h3 class="feature-title">Secure</h3>
+            <p class="feature-desc">End-to-end encrypted messages</p>
+          </div>
+          
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <h3 class="feature-title">Cloud</h3>
+            <p class="feature-desc">Access from any device</p>
+          </div>
+        </div>
+        
+        <div class="auth-buttons">
+          <a href="login.html" class="btn primary">
+            <i class="fas fa-sign-in-alt"></i> Login to Messenger
+          </a>
+          <a href="register.html" class="btn secondary">
+            <i class="fas fa-user-plus"></i> Create New Account
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="app-footer">
+      <p>© 2023 Telegram Messenger Clone | Made with ❤️</p>
+    </div>
+  </div>
+</body>
+</html>

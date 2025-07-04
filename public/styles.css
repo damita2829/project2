@@ -1,0 +1,97 @@
+/* Добавьте в конец файла */
+
+/* Статус онлайн */
+.online {
+  color: #34b523;
+}
+
+.online::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34b523;
+  margin-right: 5px;
+}
+
+.offline {
+  color: #707579;
+}
+
+/* Аватар с статусом */
+.conversation-avatar {
+  position: relative;
+}
+
+.conversation-avatar.online::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #34b523;
+  border: 2px solid #f0f2f5;
+}
+
+.conversation-avatar.offline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #a6a9ab;
+  border: 2px solid #f0f2f5;
+}
+
+/* Индикатор набора сообщения */
+.typing-indicator {
+  padding: 5px 15px;
+  font-size: 14px;
+  color: #707579;
+  font-style: italic;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+/* Статус сообщения */
+.message-status {
+  color: #0088cc;
+  margin-left: 5px;
+}
+
+/* Уведомления */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  border-radius: 30px;
+  background: #333;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.notification.show {
+  opacity: 1;
+}
+
+.notification.error {
+  background: #e74c3c;
+}
+
+.notification.success {
+  background: #2ecc71;
+}
